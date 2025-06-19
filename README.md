@@ -13,10 +13,6 @@ A página foi desenvolvida com HTML, CSS e JavaScript puro (Vanilla JS) e traz:
 
 ---
 
-## Preview Projeto
-
-![visualização do projeto](/src/videos/preview.gif)
-
 ## 📸 Funcionalidades
 
 - 🎞️ Carrossel de personagens
