@@ -18,6 +18,7 @@
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+    filter: grayscale(20%);
 }
 
 .s-wrapper .s-left-column{
@@ -56,6 +57,7 @@
 }
 .s-wrapper .s-main-content__top .s-description{
     background-color: rgba(0, 0, 0, .7);
+    width: 50%;
     max-width: 80%;
     padding: 20px;
     border-radius: 10px;

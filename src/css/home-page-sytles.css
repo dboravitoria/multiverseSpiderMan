@@ -17,7 +17,6 @@ body::before{
     opacity: 0.2;
     border: none;
     z-index: -1;
-    transition: all 1s ease-in-out;
 }
 .s-menu{
     padding: 1rem 0;
@@ -40,13 +39,30 @@ body::before{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    perspective: 3000px;
+}
+.s-cards-carousel{
+    display: flex;
+    justify-content: center;
+    width: calc(100vw / 3 - 10%);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-out;
 }
 .s-card{
     border: 0.5rem solid #fff;
-    width: calc(100% / 3 - 8%);
+    width: 100%;
     height: 70vh;
-    position: relative;
+    position: absolute;
     border-radius: 8px;
+}
+.s-card:nth-child(1){
+    transform: rotateY(0) translateZ(50vw);
+}
+.s-card:nth-child(2){
+    transform: rotateY(120deg) translateZ(50vw);
+}
+.s-card:nth-child(3){
+    transform: rotateY(240deg) translateZ(50vw);
 }
 .s-card__background{
     width: 100%;
@@ -71,7 +87,9 @@ body::before{
     transition: all 1s ease-in-out;
 }
 .s-controller{
-    position: relative;
+    position: absolute;
+    bottom: 1.5rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,6 +110,12 @@ body::before{
     cursor: pointer;
     z-index: 1;
 }
+.s-controller__button--active{
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    outline: 0.25rem solid white;
+}
 .s-controller__button:hover{
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
@@ -104,7 +128,7 @@ body::before{
 }
 .s-controller__line{
     background-color: #fff;
-    width: 100%;
+    width: 80%;
     height: 0.2rem;
     position: absolute;
 }
@@ -129,7 +153,7 @@ body#spider-man-03-hovered::before{
 }
 body[id^="spider-man-"]::before{
     opacity: 1;
-    transition: all 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 body[id^="spider-man-"] .s-card:not(.s-card--hovered){
     filter: grayscale(100%);
